@@ -5,7 +5,7 @@ class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter hospital name: ");
         String name = scanner.nextLine();
-        Hospital hospitalType = new Hospital(name);
+        Hospital hospital = new Hospital(name);
 
 
         while (true){
@@ -37,7 +37,7 @@ class Main {
                     System.out.println("Enter ward number: ");
                     int wardNumber = Integer.parseInt(scanner.nextLine());
                     GeneralPatient patient = new GeneralPatient(Id,patientName,age,wardNumber);
-                    hospitalType.addPatient(patient);
+                    hospital.addPatient(patient);
                     System.out.println("Patient added successfully");
                 } else if (patientType.equalsIgnoreCase("private")) {
                     System.out.println("Enter patient Id: ");
@@ -49,13 +49,13 @@ class Main {
                     System.out.println("Enter medical aid: ");
                     String medicalAid = scanner.nextLine();
                     PrivatePatient patient = new PrivatePatient(Id, patientName, age, medicalAid);
-                    hospitalType.addPatient(patient);
+                    hospital.addPatient(patient);
                     System.out.println("Patient added successfully");
                 }else {
                     System.out.println("Enter a valid type");
                 }
             } else if (option == 2) {
-                System.out.println(hospitalType.admittedPatients());
+                System.out.println(hospital.admittedPatients());
             } else if (option == 3) {
                 System.out.println("Enter Doctor name: ");
                 String doctorName = scanner.nextLine();
@@ -63,21 +63,21 @@ class Main {
                 String Id = scanner.nextLine();
                 System.out.println("Duration: ");
                 int duration = Integer.parseInt(scanner.nextLine());
-                System.out.println(hospitalType.scheduleAppointment(doctorName, Id, duration));
+                System.out.println(hospital.scheduleAppointment(doctorName, Id, duration));
             } else if (option == 4) {
                 System.out.println("Enter appointment Id: ");
                 int Id = Integer.parseInt(scanner.nextLine());
-                System.out.println(hospitalType.completeAppointment(Id));
+                System.out.println(hospital.completeAppointment(Id));
             } else if (option == 5) {
                 System.out.println("Enter appointment Id: ");
                 int Id = Integer.parseInt(scanner.nextLine());
-                System.out.println(hospitalType.cancelAppointment(Id));
+                System.out.println(hospital.cancelAppointment(Id));
             } else if (option == 6) {
-                System.out.println(hospitalType.getTotalRevenue());
+                System.out.println(hospital.getTotalRevenue());
             } else if (option == 7) {
-                System.out.println(hospitalType.appointments());
+                System.out.println(hospital.appointments());
             } else if (option == 8) {
-                System.out.println(hospitalType.patients());
+                System.out.println(hospital.patients());
             } else {
                 System.exit(0);
             }
