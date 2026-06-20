@@ -28,7 +28,11 @@ public class PrivatePatient extends Patient implements Billable{
 
     @Override
     public String toString() {
-        return this.name() +"|"+ this.patientId() + "|" + this.age() + "|" + this.admitted() + "|" + this.medicalAidProvider;
+        return "Patient Name: "+this.name() +"\n"+
+                "Patient Id: "+this.patientId() +"\n"+
+                "Age: "+this.age() +"\n"+
+                "Admission status: "+this.admitted() +"\n"+
+                "Medical Aid: "+this.medicalAidProvider;
     }
 
     @Override

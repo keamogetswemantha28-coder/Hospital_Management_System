@@ -23,7 +23,11 @@ public class GeneralPatient extends Patient implements Billable {
     }
     @Override
     public String toString(){
-         return this.name() +"|"+ this.patientId() + "|" + this.age() + "|" + this.admitted() + "|" + this.wardNumber;
+         return "Patient Name: "+this.name() +"\n"+
+                 "Patient Id: "+this.patientId() +"\n"+
+                 "Age: "+this.age() +"\n"+
+                 "Admission Status: "+this.admitted() +"\n"+
+                 "Ward Number: "+this.wardNumber;
     }
 
     @Override
