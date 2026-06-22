@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -71,6 +73,15 @@ class Hospital {
 
     public String name() {
         return hospitalName;
+    }
+
+    public void saveToFile(){
+        try {
+            FileWriter myWriter =new FileWriter("patientData.csv");
+            myWriter.write("PatientID, Name, Age, Admitted, Patient Type \n");
+        }catch (IOException e){
+            System.out.println("Error");
+        }
     }
 
     public double getTotalRevenue(){
